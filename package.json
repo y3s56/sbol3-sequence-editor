@@ -1,0 +1,35 @@
+{
+  "name": "sbol3-sequence-editor",
+  "private": true,
+  "version": "1.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "test": "node --test tests/*.test.mjs",
+    "test:unit": "node --test tests/*.test.mjs",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:chromium": "playwright test --project=chromium",
+    "test:e2e:firefox": "playwright test --project=firefox",
+    "test:e2e:webkit": "playwright test --project=webkit",
+    "test:browsers": "playwright install chromium firefox webkit",
+    "build": "vite build",
+    "preview": "vite preview",
+    "export:sbol:sample": "node scripts/export-sample-sbol.mjs",
+    "verify": "npm run test:unit && npm run build",
+    "verify:browser": "npm run test:e2e",
+    "verify:all": "npm run test:unit && npm run build && npm run test:e2e"
+  },
+  "dependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "seqviz": "3.10.22"
+  },
+  "devDependencies": {
+    "vite": "8.2.0",
+    "@playwright/test": "latest"
+  }
+}

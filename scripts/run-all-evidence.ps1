@@ -1,0 +1,5 @@
+$ErrorActionPreference = "Stop"
+& "$PSScriptRoot\run-browser-tests.ps1"
+& "$PSScriptRoot\run-sbol-validation.ps1"
+Write-Host ""
+Write-Host "All configured verification workflows completed."
