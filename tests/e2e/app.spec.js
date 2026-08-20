@@ -15,7 +15,9 @@ test('01 application loads with project dashboard', async ({ page }) => {
 test('02 Load Example creates expected project and annotations', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('button', { name: 'Load Example', exact: true }).click();
-  await expect(page.locator('input').filter({ has: page.locator('') }).first()).toHaveValue('Example Genetic Construct');
+  await expect(page.locator('main .hero input')).toHaveValue(
+  'Example Genetic Construct'
+);
   await expect(page.getByText('Example loaded', { exact: true })).toBeVisible();
   await expect(page.getByText('2', { exact: true }).first()).toBeVisible();
 });
